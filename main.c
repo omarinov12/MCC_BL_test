@@ -50,6 +50,11 @@
 #include "mcc_generated_files/system.h"
 
 
+void fun(void)
+{
+    
+}
+
 /*
                          Main application
  */
@@ -57,6 +62,12 @@ int main(void)
 {
     // initialize the device
     SYSTEM_Initialize();
+    
+    
+    void (*fun_ptr)(void) = &fun;
+    
+    (*fun_ptr)();
+
     
     
     while (1)

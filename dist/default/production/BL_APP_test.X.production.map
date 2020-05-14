@@ -98,10 +98,9 @@ section                    address   length (PC units)   length (bytes) (dec)
 -------                    -------   -----------------   --------------------
 mcc_generated_files/boot/memory_partition.S.scn1     0x100             0x2e700         0x45a80  (285312)
 app_reset_section          0x2e800                 0x4             0x6  (6)
-.text                      0x2e804               0x134           0x1ce  (462)
-.text                      0x2e938                0xbe           0x11d  (285)
-.text                      0x2e9f6                 0x8             0xc  (12)
-.text                      0x2e9fe                 0x2             0x3  (3)
+.text                      0x2e804               0x138           0x1d4  (468)
+.text                      0x2e93c                0xbe           0x11d  (285)
+.text                      0x2e9fa                 0x6             0x9  (9)
 __remapped_DefaultInterrupt   0x2ea00                 0x4             0x6  (6)
 remappedOscillatorFail     0x2ea04                 0x4             0x6  (6)
 remappedAddressError       0x2ea08                 0x4             0x6  (6)
@@ -206,12 +205,13 @@ remappedU6RXInterrupt      0x2eb90                 0x4             0x6  (6)
 remappedU6TXInterrupt      0x2eb94                 0x4             0x6  (6)
 remappedU6ErrInterrupt     0x2eb98                 0x4             0x6  (6)
 remappedJTAGInterrupt      0x2eb9c                 0x4             0x6  (6)
-.dinit                     0x2eba0                0x10            0x18  (24)
-.text                      0x2ebb0                 0xc            0x12  (18)
-.text                      0x2ebbc                 0xc            0x12  (18)
+.text                      0x2eba0                0x14            0x1e  (30)
+.dinit                     0x2ebb4                0x10            0x18  (24)
+.text                      0x2ebc4                0x14            0x1e  (30)
+.text                      0x2ebd8                 0x2             0x3  (3)
 mcc_generated_files/boot/memory_partition.S.scn2   0xab800               0x6fe           0xa7d  (2685)
 
-                 Total "program" memory used (bytes):        0x46aa9  (289449) 27%
+                 Total "program" memory used (bytes):        0x46ac4  (289476) 27%
 
 
 "data" Memory  [Origin = 0x800, Length = 0x8000]
@@ -243,40 +243,42 @@ External Symbols in Program Memory (by address):
                   0x02e840                  __psv_init
                   0x02e856                  __data_init
                   0x02e856                  __data_init_da
-                  0x02e908                  __OscillatorFail
-                  0x02e910                  __StackError
-                  0x02e91a                  __AddressError
-                  0x02e922                  __MathError
-                  0x02e92a                  __NVMError
-                  0x02e932                  __DefaultInterrupt
-                  0x02e938                  _PIN_MANAGER_Initialize
-                  0x02e99a                  _CLOCK_Initialize
-                  0x02e9f6                  _OSCILLATOR_Initialize
-                  0x02ebb0                  _SYSTEM_Initialize
-                  0x02ebbc                  _main
-                  0x02ebc2                  _INTERRUPT_Initialize
+                  0x02e90c                  __OscillatorFail
+                  0x02e914                  __StackError
+                  0x02e91e                  __AddressError
+                  0x02e926                  __MathError
+                  0x02e92e                  __NVMError
+                  0x02e936                  __DefaultInterrupt
+                  0x02e93c                  _PIN_MANAGER_Initialize
+                  0x02e99e                  _CLOCK_Initialize
+                  0x02e9fa                  _INTERRUPT_Initialize
+                  0x02eba0                  _fun
+                  0x02eba6                  _main
+                  0x02ebc4                  _SYSTEM_Initialize
+                  0x02ebd0                  _OSCILLATOR_Initialize
                   0x0abf00                  __FSEC.sec
 
 External Symbols in Program Memory (by name):
 
                   0x02e800                  _AppResetVector
-                  0x02e99a                  _CLOCK_Initialize
-                  0x02ebc2                  _INTERRUPT_Initialize
-                  0x02e9f6                  _OSCILLATOR_Initialize
-                  0x02e938                  _PIN_MANAGER_Initialize
-                  0x02ebb0                  _SYSTEM_Initialize
-                  0x02e91a                  __AddressError
-                  0x02e932                  __DefaultInterrupt
+                  0x02e99e                  _CLOCK_Initialize
+                  0x02e9fa                  _INTERRUPT_Initialize
+                  0x02ebd0                  _OSCILLATOR_Initialize
+                  0x02e93c                  _PIN_MANAGER_Initialize
+                  0x02ebc4                  _SYSTEM_Initialize
+                  0x02e91e                  __AddressError
+                  0x02e936                  __DefaultInterrupt
                   0x0abf00                  __FSEC.sec
-                  0x02e922                  __MathError
-                  0x02e92a                  __NVMError
-                  0x02e908                  __OscillatorFail
-                  0x02e910                  __StackError
+                  0x02e926                  __MathError
+                  0x02e92e                  __NVMError
+                  0x02e90c                  __OscillatorFail
+                  0x02e914                  __StackError
                   0x02e856                  __data_init
                   0x02e856                  __data_init_da
                   0x02e840                  __psv_init
                   0x02e804                  __resetPRI
-                  0x02ebbc                  _main
+                  0x02eba0                  _fun
+                  0x02eba6                  _main
 
 Memory Configuration
 
@@ -335,7 +337,7 @@ LOAD c:/program files (x86)/microchip/xc16/v1.41/bin/bin/../../lib\libfx-elf.a
                   0x000002          0x2 SHORT 0x2 ((ABSOLUTE (__reset) >> 0x10) & 0x7f)
                   0x000003          0x2 SHORT 0x0
 
-.text             0x02e804        0x134
+.text             0x02e804        0x138
  *(.init)
  .init            0x02e804         0x4c c:/program files (x86)/microchip/xc16/v1.41/bin/bin/../../lib\liblega-pic30-elf.a(crt0_extended24.o)
                   0x02e804                  __resetPRI
@@ -346,23 +348,24 @@ LOAD c:/program files (x86)/microchip/xc16/v1.41/bin/bin/../../lib\libfx-elf.a
                   0x02e856                  __data_init_da
  *(.user_init)
  *(.handle)
+ .handle          0x02e908          0x4 jump_table
  *(.isr*)
- .isr.text        0x02e908         0x2a build/default/production/mcc_generated_files/traps.o
-                  0x02e908                  __OscillatorFail
-                  0x02e910                  __StackError
-                  0x02e91a                  __AddressError
-                  0x02e922                  __MathError
-                  0x02e92a                  __NVMError
- .isr             0x02e932          0x4 default_isr
-                  0x02e932                  __DefaultInterrupt
+ .isr.text        0x02e90c         0x2a build/default/production/mcc_generated_files/traps.o
+                  0x02e90c                  __OscillatorFail
+                  0x02e914                  __StackError
+                  0x02e91e                  __AddressError
+                  0x02e926                  __MathError
+                  0x02e92e                  __NVMError
+ .isr             0x02e936          0x4 default_isr
+                  0x02e936                  __DefaultInterrupt
  *(.libc)
  *(.libm)
  *(.libdsp)
  *(.lib*)
  .libpic30_crt_start_mode
-                  0x02e936          0x2 c:/program files (x86)/microchip/xc16/v1.41/bin/bin/../../lib\liblega-pic30-elf.a(crt_start_mode_normalda.Leo)
-                  0x02e936                  __crt_start_mode
-                  0x02e936                  __crt_start_mode_normal
+                  0x02e93a          0x2 c:/program files (x86)/microchip/xc16/v1.41/bin/bin/../../lib\liblega-pic30-elf.a(crt_start_mode_normalda.Leo)
+                  0x02e93a                  __crt_start_mode
+                  0x02e93a                  __crt_start_mode_normal
 
 usercode
  *(usercode)
@@ -402,54 +405,54 @@ __FDEVOPT1
 .comment
  *(.comment)
 
-.debug_info       0x000000       0x144f
+.debug_info       0x000000       0x1481
  *(.debug_info)
  .debug_info      0x000000        0x159 build/default/production/mcc_generated_files/system.o
- .debug_info      0x000159        0x13a build/default/production/main.o
- .debug_info      0x000293        0x371 build/default/production/mcc_generated_files/clock.o
- .debug_info      0x000604        0x42c build/default/production/mcc_generated_files/traps.o
- .debug_info      0x000a30        0x167 build/default/production/mcc_generated_files/interrupt_manager.o
- .debug_info      0x000b97        0x15a build/default/production/mcc_generated_files/mcc.o
- .debug_info      0x000cf1        0x5ec build/default/production/mcc_generated_files/pin_manager.o
- .debug_info      0x0012dd         0xbb build/default/production/mcc_generated_files/boot/user_interrupt_table.o
- .debug_info      0x001398         0xb7 build/default/production/mcc_generated_files/boot/hardware_interrupt_table.o
+ .debug_info      0x000159        0x16c build/default/production/main.o
+ .debug_info      0x0002c5        0x371 build/default/production/mcc_generated_files/clock.o
+ .debug_info      0x000636        0x42c build/default/production/mcc_generated_files/traps.o
+ .debug_info      0x000a62        0x167 build/default/production/mcc_generated_files/interrupt_manager.o
+ .debug_info      0x000bc9        0x15a build/default/production/mcc_generated_files/mcc.o
+ .debug_info      0x000d23        0x5ec build/default/production/mcc_generated_files/pin_manager.o
+ .debug_info      0x00130f         0xbb build/default/production/mcc_generated_files/boot/user_interrupt_table.o
+ .debug_info      0x0013ca         0xb7 build/default/production/mcc_generated_files/boot/hardware_interrupt_table.o
  *(.gnu.linkonce.wi.*)
 
-.debug_abbrev     0x000000        0x2b9
+.debug_abbrev     0x000000        0x2ef
  *(.debug_abbrev)
  .debug_abbrev    0x000000         0x34 build/default/production/mcc_generated_files/system.o
- .debug_abbrev    0x000034         0x36 build/default/production/main.o
- .debug_abbrev    0x00006a         0x6a build/default/production/mcc_generated_files/clock.o
- .debug_abbrev    0x0000d4        0x100 build/default/production/mcc_generated_files/traps.o
- .debug_abbrev    0x0001d4         0x34 build/default/production/mcc_generated_files/interrupt_manager.o
- .debug_abbrev    0x000208         0x34 build/default/production/mcc_generated_files/mcc.o
- .debug_abbrev    0x00023c         0x59 build/default/production/mcc_generated_files/pin_manager.o
- .debug_abbrev    0x000295         0x14 build/default/production/mcc_generated_files/boot/user_interrupt_table.o
- .debug_abbrev    0x0002a9         0x10 build/default/production/mcc_generated_files/boot/hardware_interrupt_table.o
+ .debug_abbrev    0x000034         0x6c build/default/production/main.o
+ .debug_abbrev    0x0000a0         0x6a build/default/production/mcc_generated_files/clock.o
+ .debug_abbrev    0x00010a        0x100 build/default/production/mcc_generated_files/traps.o
+ .debug_abbrev    0x00020a         0x34 build/default/production/mcc_generated_files/interrupt_manager.o
+ .debug_abbrev    0x00023e         0x34 build/default/production/mcc_generated_files/mcc.o
+ .debug_abbrev    0x000272         0x59 build/default/production/mcc_generated_files/pin_manager.o
+ .debug_abbrev    0x0002cb         0x14 build/default/production/mcc_generated_files/boot/user_interrupt_table.o
+ .debug_abbrev    0x0002df         0x10 build/default/production/mcc_generated_files/boot/hardware_interrupt_table.o
 
-.debug_line       0x000000        0xd6a
+.debug_line       0x000000        0xd6e
  *(.debug_line)
  .debug_line      0x000000         0x4d build/default/production/mcc_generated_files/system.o
- .debug_line      0x00004d         0x35 build/default/production/main.o
- .debug_line      0x000082        0x138 build/default/production/mcc_generated_files/clock.o
- .debug_line      0x0001ba        0x158 build/default/production/mcc_generated_files/traps.o
- .debug_line      0x000312         0x55 build/default/production/mcc_generated_files/interrupt_manager.o
- .debug_line      0x000367         0x49 build/default/production/mcc_generated_files/mcc.o
- .debug_line      0x0003b0        0x14f build/default/production/mcc_generated_files/pin_manager.o
- .debug_line      0x0004ff         0x5d build/default/production/mcc_generated_files/boot/user_interrupt_table.o
- .debug_line      0x00055c         0x1a build/default/production/mcc_generated_files/boot/memory_partition.o
- .debug_line      0x000576         0x1a build/default/production/mcc_generated_files/boot/interrupts.o
- .debug_line      0x000590        0x7da build/default/production/mcc_generated_files/boot/hardware_interrupt_table.o
+ .debug_line      0x00004d         0x39 build/default/production/main.o
+ .debug_line      0x000086        0x138 build/default/production/mcc_generated_files/clock.o
+ .debug_line      0x0001be        0x158 build/default/production/mcc_generated_files/traps.o
+ .debug_line      0x000316         0x55 build/default/production/mcc_generated_files/interrupt_manager.o
+ .debug_line      0x00036b         0x49 build/default/production/mcc_generated_files/mcc.o
+ .debug_line      0x0003b4        0x14f build/default/production/mcc_generated_files/pin_manager.o
+ .debug_line      0x000503         0x5d build/default/production/mcc_generated_files/boot/user_interrupt_table.o
+ .debug_line      0x000560         0x1a build/default/production/mcc_generated_files/boot/memory_partition.o
+ .debug_line      0x00057a         0x1a build/default/production/mcc_generated_files/boot/interrupts.o
+ .debug_line      0x000594        0x7da build/default/production/mcc_generated_files/boot/hardware_interrupt_table.o
 
-.debug_frame      0x000000        0x1b0
+.debug_frame      0x000000        0x1cc
  *(.debug_frame)
  .debug_frame     0x000000         0x30 build/default/production/mcc_generated_files/system.o
- .debug_frame     0x000030         0x30 build/default/production/main.o
- .debug_frame     0x000060         0x30 build/default/production/mcc_generated_files/clock.o
- .debug_frame     0x000090         0x90 build/default/production/mcc_generated_files/traps.o
- .debug_frame     0x000120         0x30 build/default/production/mcc_generated_files/interrupt_manager.o
- .debug_frame     0x000150         0x30 build/default/production/mcc_generated_files/mcc.o
- .debug_frame     0x000180         0x30 build/default/production/mcc_generated_files/pin_manager.o
+ .debug_frame     0x000030         0x4c build/default/production/main.o
+ .debug_frame     0x00007c         0x30 build/default/production/mcc_generated_files/clock.o
+ .debug_frame     0x0000ac         0x90 build/default/production/mcc_generated_files/traps.o
+ .debug_frame     0x00013c         0x30 build/default/production/mcc_generated_files/interrupt_manager.o
+ .debug_frame     0x00016c         0x30 build/default/production/mcc_generated_files/mcc.o
+ .debug_frame     0x00019c         0x30 build/default/production/mcc_generated_files/pin_manager.o
 
 .debug_str        0x000000         0x2a
  *(.debug_str)
@@ -463,22 +466,22 @@ __FDEVOPT1
  *(.debug_macinfo)
 
 .debug_pubnames
-                  0x000000        0x16b
+                  0x000000        0x173
  *(.debug_pubnames)
  .debug_pubnames
                   0x000000         0x28 build/default/production/mcc_generated_files/system.o
  .debug_pubnames
-                  0x000028         0x1b build/default/production/main.o
+                  0x000028         0x23 build/default/production/main.o
  .debug_pubnames
-                  0x000043         0x27 build/default/production/mcc_generated_files/clock.o
+                  0x00004b         0x27 build/default/production/mcc_generated_files/clock.o
  .debug_pubnames
-                  0x00006a         0x7d build/default/production/mcc_generated_files/traps.o
+                  0x000072         0x7d build/default/production/mcc_generated_files/traps.o
  .debug_pubnames
-                  0x0000e7         0x2b build/default/production/mcc_generated_files/interrupt_manager.o
+                  0x0000ef         0x2b build/default/production/mcc_generated_files/interrupt_manager.o
  .debug_pubnames
-                  0x000112         0x2c build/default/production/mcc_generated_files/mcc.o
+                  0x00011a         0x2c build/default/production/mcc_generated_files/mcc.o
  .debug_pubnames
-                  0x00013e         0x2d build/default/production/mcc_generated_files/pin_manager.o
+                  0x000146         0x2d build/default/production/mcc_generated_files/pin_manager.o
 
 .debug_ranges
  *(.debug_ranges)
@@ -2455,6 +2458,7 @@ LOAD c:/program files (x86)/microchip/xc16/v1.41/bin/bin/../../lib\liblega-c-elf
 END GROUP
 OUTPUT(dist/default/production/BL_APP_test.X.production.elf elf32-pic30)
 LOAD /CW/_FSEC
+LOAD jump_table
 LOAD default_isr
 LOAD data_init
 
@@ -3706,30 +3710,31 @@ remappedJTAGInterrupt
  .ivt._JTAGInterrupt
                     0x00fe          0x2 build/default/production/mcc_generated_files/boot/hardware_interrupt_table.o
 
-.text             0x02e938         0xbe
- .text            0x02e938         0x62 build/default/production/mcc_generated_files/pin_manager.o
-                  0x02e938                  _PIN_MANAGER_Initialize
- .text            0x02e99a         0x46 build/default/production/mcc_generated_files/clock.o
-                  0x02e99a                  _CLOCK_Initialize
- .text            0x02e9e0         0x16 build/default/production/mcc_generated_files/traps.o
-                  0x02e9e0                  _TRAPS_halt_on_error
+.text             0x02e93c         0xbe
+ .text            0x02e93c         0x62 build/default/production/mcc_generated_files/pin_manager.o
+                  0x02e93c                  _PIN_MANAGER_Initialize
+ .text            0x02e99e         0x46 build/default/production/mcc_generated_files/clock.o
+                  0x02e99e                  _CLOCK_Initialize
+ .text            0x02e9e4         0x16 build/default/production/mcc_generated_files/traps.o
+                  0x02e9e4                  _TRAPS_halt_on_error
 
-.dinit            0x02eba0         0x10
- .dinit           0x02eba0         0x10 data_init
+.text             0x02eba0         0x14
+ .text            0x02eba0         0x14 build/default/production/main.o
+                  0x02eba0                  _fun
+                  0x02eba6                  _main
 
-.text             0x02ebb0          0xc
- .text            0x02ebb0          0xc build/default/production/mcc_generated_files/system.o
-                  0x02ebb0                  _SYSTEM_Initialize
+.dinit            0x02ebb4         0x10
+ .dinit           0x02ebb4         0x10 data_init
 
-.text             0x02e9f6          0x8
- .text            0x02e9f6          0x8 build/default/production/mcc_generated_files/mcc.o
-                  0x02e9f6                  _OSCILLATOR_Initialize
+.text             0x02ebc4         0x14
+ .text            0x02ebc4          0xc build/default/production/mcc_generated_files/system.o
+                  0x02ebc4                  _SYSTEM_Initialize
+ .text            0x02ebd0          0x8 build/default/production/mcc_generated_files/mcc.o
+                  0x02ebd0                  _OSCILLATOR_Initialize
 
-.text             0x02ebbc          0xc
- .text            0x02ebbc          0x6 build/default/production/main.o
-                  0x02ebbc                  _main
- .text            0x02ebc2          0x6 build/default/production/mcc_generated_files/interrupt_manager.o
-                  0x02ebc2                  _INTERRUPT_Initialize
+.text             0x02e9fa          0x6
+ .text            0x02e9fa          0x6 build/default/production/mcc_generated_files/interrupt_manager.o
+                  0x02e9fa                  _INTERRUPT_Initialize
 
-.text             0x02e9fe          0x2
- .text            0x02e9fe          0x2 build/default/production/mcc_generated_files/boot/user_interrupt_table.o
+.text             0x02ebd8          0x2
+ .text            0x02ebd8          0x2 build/default/production/mcc_generated_files/boot/user_interrupt_table.o
